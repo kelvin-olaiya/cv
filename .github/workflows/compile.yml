@@ -1,0 +1,13 @@
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: kelvin-olaiya/latex2pdf@main
+      - name: Create or Update CV release
+        run: |
+          mv main.pdf CV.pdf  
+          gh release upload -d --notes "latest version of my cv" cv CV.pdf
