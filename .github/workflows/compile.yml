@@ -1,5 +1,7 @@
 on:
   push:
+    branches:
+      - main
   workflow_dispatch:
 jobs:
   build:
@@ -12,4 +14,4 @@ jobs:
       - name: Create or Update CV release
         run: |
           mv main.pdf CV.pdf  
-          gh release upload cv CV.pdf
+          gh release upload --clobber cv CV.pdf
