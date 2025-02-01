@@ -10,4 +10,4 @@ jobs:
       - name: Create or Update CV release
         run: |
           mv main.pdf CV.pdf  
-          gh release upload -d --notes "latest version of my cv" cv CV.pdf
+          gh release upload cv CV.pdf
